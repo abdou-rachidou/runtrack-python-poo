@@ -1,4 +1,4 @@
-class Rectangele:
+class Rectangle:
 
 
     def __init__(self, longueur, largeur) -> None:
@@ -20,7 +20,7 @@ class Rectangele:
     def set_largeur(self, largeur_modifiee):
         self.__largeur = largeur_modifiee
 
-rectangle = Rectangele(10, 5)
+rectangle = Rectangle(10, 5)
 
 # Afficher les valeurs initiales
 print("Longueur initiale :", rectangle.get_longueur())
