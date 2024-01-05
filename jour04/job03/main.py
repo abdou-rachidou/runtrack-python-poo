@@ -4,16 +4,10 @@ class Rectangle:
         self.__largeur = largeur
 
     def perimetre(self):
-        # Convertion les valeurs en nombres avant d'effectuer le calcul
-        longueur = float(self.__longueur.replace("cm", "").strip())
-        largeur = float(self.__largeur.replace("cm", "").strip())
-        return 2 * (longueur + largeur)
+        return 2 * (self.__longueur + self.__largeur)
 
     def surface(self):
-        # Convertion les valeurs en nombres avant d'effectuer le calcul
-        longueur = float(self.__longueur.replace("cm", "").strip())
-        largeur = float(self.__largeur.replace("cm", "").strip())
-        return longueur * largeur
+        return self.__longueur * self.__largeur
 
     def get_longueur(self):
         return self.__longueur
@@ -34,17 +28,13 @@ class Parallelepipede(Rectangle):
         self.__hauteur = hauteur
 
     def volume(self):
-        # Convertion des valeurs en nombres avant d'effectuer le calcul
-        longueur = float(self.get_longueur().replace("cm", "").strip())
-        largeur = float(self.get_largeur().replace("cm", "").strip())
-        hauteur = float(self.__hauteur.replace("cm", "").strip())
-        return longueur * largeur * hauteur
+        return self.get_longueur() * self.get_largeur() * self.__hauteur
 
 
-# Exemple des instances
-rectangle = Rectangle("20 cm", "10 cm")
-print("Le périmètre du Rectangle est :", rectangle.perimetre(), "cm")
-print("La surface du Rectangle est :", rectangle.surface(), "cm²")
+# Utilisation
+rectangle = Rectangle(20, 10)
+print(f"Le périmètre du Rectangle est : {rectangle.perimetre()} cm")
+print(f"La surface du Rectangle est : {rectangle.surface()} cm²")
 
-parallelepipede = Parallelepipede("20 cm", "10 cm", "50 cm")
-print("Le volume du Parallélépipède est :", parallelepipede.volume(), "cm³")
+parallelepipede = Parallelepipede(20, 10, 50)
+print(f"Le volume du Parallélépipède est : {parallelepipede.volume()} cm³")
